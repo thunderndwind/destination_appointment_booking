@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  bus-destination_db:
+    image: mysql:8.0
+
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: bus-destination
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - bus-destination_db:/var/lib/mysql
+
+  bus-destination_service:
+    build: ./bus-destination_service
+
+    container_name: destination_service_container
+
+    command: ["python", "app.py"]
+
+    restart: on-failure
+
+    volumes:
+      - ./bus-destination_service:/app/
+
+    links:
+      - bus-destination_db
+
+    depends_on:
+      - bus-destination_db
+
+    environment:
+      MYSQL_HOST: bus-destination_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: bus-destination
+
+    ports:
+      - "5000:5000"
+
+volumes:
+  bus-destination_db:

@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  bookings_db:
+    image: mysql:8.0
+
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: booking
+
+    ports:
+      - "3308:3306"
+
+    volumes:
+      - bookings_db:/var/lib/mysql
+
+  bookings_service:
+    build: ./bookings_service
+
+    container_name: bookings_service_container
+
+    command: ["python", "run.py"]
+
+    restart: on-failure
+
+    volumes:
+      - ./bookings_service:/app/
+
+    links:
+      - bookings_db
+
+    depends_on:
+      - bookings_db
+
+    environment:
+      MYSQL_HOST: bookings_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: booking
+
+    ports:
+      - "5002:5000"
+
+volumes:
+  bookings_db:

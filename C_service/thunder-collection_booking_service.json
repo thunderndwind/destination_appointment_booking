@@ -1,0 +1,81 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "booking_service",
+    "collectionId": "1b80628c-c017-4d32-bb04-6b0ea6d4ee49",
+    "dateExported": "2024-05-07T14:57:43.353Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f4e5cb07-163b-4adf-8d2f-83f806178d66",
+            "colId": "1b80628c-c017-4d32-bb04-6b0ea6d4ee49",
+            "containerId": "",
+            "name": "hello",
+            "url": "http://127.0.0.1:5002/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-07T14:24:23.290Z",
+            "modified": "2024-05-07T14:24:33.747Z",
+            "headers": []
+        },
+        {
+            "_id": "18d3484e-098c-4f1c-b562-35ed6cb05ee6",
+            "colId": "1b80628c-c017-4d32-bb04-6b0ea6d4ee49",
+            "containerId": "",
+            "name": "get_bookings",
+            "url": "http://127.0.0.1:5002/api/getBookings",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-07T14:24:46.865Z",
+            "modified": "2024-05-07T14:43:41.322Z",
+            "headers": []
+        },
+        {
+            "_id": "11f668ce-31ed-4232-967f-742b57088c23",
+            "colId": "1b80628c-c017-4d32-bb04-6b0ea6d4ee49",
+            "containerId": "",
+            "name": "create_booking",
+            "url": "http://127.0.0.1:5002/api/createBooking",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-07T14:43:57.761Z",
+            "modified": "2024-05-07T14:56:51.874Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"user_id\": 1,\r\n  \"appointment_id\": 1\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "063ad51d-1b60-45c1-b6d5-5d159e2b3412",
+            "colId": "1b80628c-c017-4d32-bb04-6b0ea6d4ee49",
+            "containerId": "",
+            "name": "update_booking",
+            "url": "http://127.0.0.1:5002/api/updateBooking/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-05-07T14:54:24.193Z",
+            "modified": "2024-05-07T14:56:26.803Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"user_id\": 1,\r\n  \"appointment_id\": 2\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "803c4f66-3360-439e-82e0-4a05e33bdfd2",
+            "colId": "1b80628c-c017-4d32-bb04-6b0ea6d4ee49",
+            "containerId": "",
+            "name": "delete_booking",
+            "url": "http://127.0.0.1:5002/api/deleteBooking/1",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-05-07T14:57:21.581Z",
+            "modified": "2024-05-07T14:57:36.188Z",
+            "headers": []
+        }
+    ],
+    "ref": "KEf0HgaGwyUik6tRhHQ0-Dk5C3IsPgn190AE9PSE2jFinMiXW2GwnFoswoNKeDfPYYw2F9DPujjMmDEZuqendA"
+}
